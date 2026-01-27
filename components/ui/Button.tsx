@@ -25,7 +25,7 @@ export default function Button({
 
   return (
     <Component
-      href={href ?? undefined}
+      href={href}
       onClick={onClick}
       className={clsx(
         "relative inline-flex items-center justify-center rounded-xl px-6 h-12",
