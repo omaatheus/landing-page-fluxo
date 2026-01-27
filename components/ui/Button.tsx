@@ -21,19 +21,15 @@ export default function Button({
   variant = "default",
   className,
 }: ButtonProps) {
-  const Component = href ? Link : "button";
+  const baseClasses = clsx(
+    "relative inline-flex items-center justify-center rounded-xl px-6 h-12",
+    "font-medium text-white bg-[#38b6ff] hover:bg-[#008cdd] transition-colors",
+    "group",
+    className
+  );
 
-  return (
-    <Component
-      href={href}
-      onClick={onClick}
-      className={clsx(
-        "relative inline-flex items-center justify-center rounded-xl px-6 h-12",
-        "font-medium text-white bg-[#38b6ff] hover:bg-[#008cdd] transition-colors",
-        "group", 
-        className
-      )}
-    >
+  const content = (
+    <>
       {variant === "default" && <span>{children}</span>}
 
       {variant === "arrow" && (
@@ -51,12 +47,26 @@ export default function Button({
 
           <motion.div
             initial={{ width: 0 }}
-            whileHover={{ width: 14 }} // expande o lado direito
+            whileHover={{ width: 14 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="absolute right-[-14px] top-0 bottom-0 bg-black rounded-r-xl"
           />
         </div>
       )}
-    </Component>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={baseClasses}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button onClick={onClick} className={baseClasses}>
+      {content}
+    </button>
   );
 }
