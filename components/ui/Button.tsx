@@ -29,7 +29,7 @@ export default function Button({
       onClick={onClick}
       className={clsx(
         "relative inline-flex items-center justify-center rounded-xl px-6 h-12",
-        "font-medium text-white bg-blue-600 hover:bg-blue-800 transition-colors",
+        "font-medium text-white bg-[#38b6ff] hover:bg-[#008cdd] transition-colors",
         "group", 
         className
       )}
