@@ -111,9 +111,7 @@ ${scrolled ? "shadow-md border-opacity-100" : "shadow-none border-opacity-0"}
                 );
               })}
 
-              <button className="w-[85%] px-4 py-3 bg-[#38b6ff] text-white rounded-lg font-semibold hover:bg-blue-700 transition">
-                Contato
-              </button>
+              <Button variant="arrow" href="/quote">Entre em contato</Button>
             </nav>
           </motion.div>
         )}
