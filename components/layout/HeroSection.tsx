@@ -39,7 +39,7 @@ export default function HeroSection() {
   const [mode, setMode] = useState<"empresa" | "ideia">("empresa");
 
   return (
-    <section className="w-full bg-[#efefef] mt-5 md:mt-23">
+    <section className="w-full bg-[#fff] mt-5 md:mt-23">
       <div className="mx-auto max-w-7xl px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         <motion.div
