@@ -72,7 +72,7 @@ const UnderConstruction: React.FC = () => {
         >
           <a 
             href="/" 
-            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-8 rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-[#38b6ff] hover:bg-[#008cdd] text-white font-medium py-3 px-8 rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para o início
