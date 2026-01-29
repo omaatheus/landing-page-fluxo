@@ -1,6 +1,6 @@
-"use client"
+"use client";
+
 import React, { useState } from 'react';
-// 1. Importar Variants
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
@@ -32,13 +32,12 @@ const faqData: FaqItem[] = [
   }
 ];
 
-// 2. Definir as variantes de animação
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Atraso entre o título e cada item da lista
+      staggerChildren: 0.15,
     },
   },
 };
@@ -53,15 +52,32 @@ const itemVariants: Variants = {
 };
 
 const FaqSection: React.FC = () => {
-
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
   return (
     <section className="w-full py-20 px-4 md:px-8 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <motion.div 
         className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24"
         variants={containerVariants}
@@ -89,6 +105,9 @@ const FaqSection: React.FC = () => {
                 key={index}
                 variants={itemVariants}
                 onClick={() => toggleFaq(index)}
+                role="button"
+                aria-expanded={isOpen}
+                tabIndex={0}
                 className={`cursor-pointer transition-all duration-300 ease-in-out
                   ${isOpen 
                     ? 'bg-white border border-slate-200 rounded-2xl shadow-sm p-6' 
@@ -125,7 +144,6 @@ const FaqSection: React.FC = () => {
             );
           })}
         </div>
-
       </motion.div>
     </section>
   );
