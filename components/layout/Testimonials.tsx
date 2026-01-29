@@ -16,15 +16,15 @@ interface Review {
 const reviews: Review[] = [
   {
     id: 1,
-    text: "Sei como é difícil encontrar bons parceiros de TI, mas a Fluxo me surpreendeu muito positivamente! Eles são os nossos principais fornecedores de tecnologia e tenho segurança em indicar esse time.",
+    text: "A Fluxo me surpreendeu muito positivamente! Eles são os nossos principais parceiros de tecnologia e tenho segurança em indicar esse time.",
     authorName: "Cláudio",
     authorRole: "Diretor na Indústria Frigorífica",
     authorImage:
-      "/letra-c.png",
+      "/claudio.jpg",
   },
   {
     id: 2,
-    text: "A equipe transformou nossa ideia em um MVP funcional em tempo recorde. A comunicação foi transparente do início ao fim e o resultado final superou nossas expectativas de design e performance.",
+    text: "A equipe transformou nossa ideia em um MVP funcional. A comunicação foi transparente do início ao fim e o resultado final superou nossas expectativas de design e performance.",
     authorName: "Anônimo",
     authorRole: "Fundador de Startup no Ramo Imobiliário",
     authorImage:
